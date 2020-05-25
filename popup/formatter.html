@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="formatter.css" />
+  <link rel="stylesheet" href="prismjs.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="launchWASM">Prettify</div>
+    <div class="copyJSON">Copy result</div>
+  </div>
+  <div class="input">
+    <textarea id="inputJSON" placeholder="Add your JSON here..."></textarea>
+  </div>
+  <figure>
+    <figcaption>Result</figcaption>
+    <pre><code id="outputJSON" class="language-json"></code></pre>
+  </figure>
+  <script src="formatter.js"></script>
+  <script src="prismjs.js"></script>
+</body>
+
+</html>

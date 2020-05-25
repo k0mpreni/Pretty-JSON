@@ -1,0 +1,40 @@
+html, body {
+  width: 500px;
+  min-height: 500px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.launchWASM, .copyJSON {
+  width: 150px;
+  color: #ffffff;
+  margin: 3% auto;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #2d2d2d;
+  border: 1px solid #2d2d2d;
+}
+
+.launchWASM:hover, .copyJSON:hover {
+  border: 1px solid #2d2d2d;
+  color: #2d2d2d;
+  background-color: transparent;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 90%;
+  height: 300px;
+}
