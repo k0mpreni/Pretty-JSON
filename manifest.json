@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Prettify you JSON",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Prettify you JSON",
   "homepage_url": "https://github.com/imalexlab/Pretty-JSON",
   "icons": {
