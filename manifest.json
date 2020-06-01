@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Pretty-JSON",
+  "name": "Prettify you JSON",
   "version": "1.0",
   "description": "Prettify you JSON",
   "homepage_url": "https://github.com/imalexlab/Pretty-JSON",
@@ -13,7 +13,7 @@
   ],
   "browser_action": {
     "default_icon": "icons/gopher.png",
-    "default_title": "Pretty-JSON",
+    "default_title": "Prettify you JSON",
     "default_popup": "popup/formatter.html"
   },
   "background": {

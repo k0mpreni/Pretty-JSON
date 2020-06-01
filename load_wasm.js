@@ -1,21 +1,20 @@
-if (!WebAssembly.instantiateStreaming) {
-  // polyfill
-  WebAssembly.instantiateStreaming = async (resp, importObject) => {
-    const source = await (await resp).arrayBuffer();
-    console.log("loaded")
+const go = new Go(); // Defined in wasm_exec.js
+const WASM_URL = 'wasm.wasm';
 
-    return await WebAssembly.instantiate(source, importObject);
-  };
+var wasm;
+
+if ('instantiateStreaming' in WebAssembly) {
+	WebAssembly.instantiateStreaming(fetch(WASM_URL), go.importObject).then(function (obj) {
+		wasm = obj.instance;
+		go.run(wasm);
+	})
+} else {
+	fetch(WASM_URL).then(resp =>
+		resp.arrayBuffer()
+	).then(bytes =>
+		WebAssembly.instantiate(bytes, go.importObject).then(function (obj) {
+			wasm = obj.instance;
+			go.run(wasm);
+		})
+	)
 }
-
-const go = new Go();
-let mod, inst;
-WebAssembly.instantiateStreaming(fetch("lib.wasm"), go.importObject).then(
-  async result => {
-    console.log("loaded")
-    mod = result.module;
-    inst = result.instance;
-    memoryBytes = new Uint8Array(inst.exports.mem.buffer)
-    await go.run(inst);
-  }
-);
